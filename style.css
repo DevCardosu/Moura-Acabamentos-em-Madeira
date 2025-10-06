@@ -25,6 +25,7 @@ body {
     line-height: 1.6;
     background-color: var(--cor-fundo-claro);
     color: var(--cor-texto-secundario);
+    font-size: 16px;
 }
 
 .container {
@@ -34,7 +35,7 @@ body {
 }
 
 html {
-    scroll-behavior: smooth; /* Para rolagem suave do menu */
+    scroll-behavior: smooth;
 }
 
 /*==================================
@@ -56,13 +57,13 @@ header {
 }
 
 header img {
-    height: 60px;
+    height: 50px;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 header nav a {
@@ -70,6 +71,7 @@ header nav a {
     color: var(--cor-texto-secundario);
     font-weight: bold;
     transition: color 0.3s ease;
+    font-size: 0.9em;
 }
 
 header nav a:hover {
@@ -80,8 +82,29 @@ header nav a:hover {
   Estilo das Seções Principais
 ==================================*/
 section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
+}
+
+#hero {
+    padding: 100px 20px;
+    background-image: url(assets/fundo.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 h1, h2, h3 {
@@ -89,25 +112,22 @@ h1, h2, h3 {
     color: var(--cor-texto-principal);
 }
 
-h1 {
+#hero h1 {
     font-size: 3em;
-    line-height: 1.2;
+    line-height: 1.1;
+    color: var(--cor-card);
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 2.2em;
-}
-
-/* Seção Hero */
-#hero {
-    padding: 80px 20px;
+    font-size: 2em;
 }
 
 .hero-content {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -120,56 +140,63 @@ h2 {
 .hero-text-right {
     flex: 1;
     background-color: var(--cor-card);
-    padding: 40px;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: var(--sombra-leve);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.hero-text-right:hover {
+    transform: translateY(-5px);
 }
 
 #hero p {
     margin-bottom: 20px;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--cor-destaque);
     color: var(--cor-card);
-    padding: 15px 30px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: var(--cor-hover);
+    transform: translateY(-2px);
 }
 
 /* Seção Sobre Nós */
 #sobre-nos {
-    padding: 60px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 #sobre-nos h2 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .sobre-content-cards {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px; /* Reduzido para 20px */
     flex-wrap: wrap;
     align-items: stretch;
 }
 
 .sobre-card {
     background-color: var(--cor-card);
-    padding: 30px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: var(--sombra-leve);
-    flex: 1 1 350px;
+    flex: 1 1 300px; /* Reduzido para 300px */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -182,20 +209,20 @@ h2 {
 }
 
 .sobre-card h3 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: 15px;
     color: var(--cor-texto-principal);
 }
 
 .sobre-card p {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.6;
     color: var(--cor-texto-secundario);
     flex-grow: 1;
 }
 
 .sobre-valores {
-    flex: 1 1 350px;
+    flex: 1 1 300px; /* Reduzido para 300px */
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -216,10 +243,10 @@ h2 {
 
 .sobre-valores li {
     background-color: var(--cor-card);
-    padding: 25px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: var(--sombra-leve);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-left: 5px solid var(--cor-destaque);
     flex-grow: 1;
 }
@@ -230,38 +257,38 @@ h2 {
 
 .sobre-valores h4 {
     color: var(--cor-texto-principal);
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 5px;
 }
 
 .sobre-valores p {
-    font-size: 0.95em;
+    font-size: 0.9em;
 }
 
 /* Seção Serviços */
 #servicos {
-    padding: 60px 20px;
+    padding: 50px 20px;
 }
 
 #servicos h2 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 #servicos ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
     align-items: stretch;
 }
 
 #servicos li {
     background-color: var(--cor-card);
-    padding: 30px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: var(--sombra-leve);
-    flex: 1 1 250px;
+    flex: 1 1 220px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -274,166 +301,158 @@ h2 {
 }
 
 #servicos h3 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 10px;
 }
 
-/* Seção Galeria de Projetos */
-#galeria-projetos {
+/*==================================
+  Estilo da Seção de Projetos
+==================================*/
+#projetos {
     padding: 60px 20px;
+    background-color: var(--cor-fundo-claro);
 }
 
-#galeria-projetos h2 {
-    margin-bottom: 40px;
-}
-
-#galeria-projetos .galeria {
+.galeria-projetos {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .projeto-card {
     position: relative;
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     cursor: pointer;
     border-radius: 8px;
-    box-shadow: var(--sombra-leve);
     overflow: hidden;
+    box-shadow: var(--sombra-leve);
+    transition: transform 0.3s ease;
 }
 
-.card-inner {
-    position: relative;
+.projeto-card:hover {
+    transform: scale(1.03);
+}
+
+.projeto-card img {
     width: 100%;
-    padding-bottom: 75%;
+    display: block;
 }
 
-.projeto-imagem,
-.projeto-imagem img {
+.projeto-card .overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    transition: transform 0.4s ease;
-}
-
-.projeto-imagem img {
-    object-fit: cover;
-}
-
-.projeto-descricao {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(62, 44, 28, 0.9);
+    background-color: rgba(62, 44, 28, 0.8);
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
 }
 
-.projeto-descricao h3 {
+.projeto-card:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
     color: #fff;
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-size: 1.2em;
 }
 
-.projeto-descricao p {
+.overlay p {
     color: #fff;
-    font-size: 1em;
+    font-size: 0.85em;
 }
 
-.projeto-card:hover .projeto-descricao {
-    opacity: 1;
-}
-
-.projeto-card:hover .projeto-imagem img {
-    transform: scale(1.1);
-}
-
-/* Seção Depoimentos - ESTILIZAÇÃO ATUALIZADA */
+/*==================================
+  Estilo da Seção de Depoimentos
+==================================*/
 #depoimentos {
-    padding: 60px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 #depoimentos h2 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* Novo container para os depoimentos */
-#depoimentos .depoimento-container {
+/* Novo layout para os depoimentos */
+#depoimentos .depoimentos-grid {
     display: flex;
     justify-content: center;
-    gap: 70px; /* Espaçamento entre os cards */
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
-    align-items: stretch; /* Garante que os cards tenham a mesma altura */
-    max-width: 200px; /* Limita a largura do container */
-    margin: 0 auto; /* Centraliza o container */
+    gap: 25px;
+    flex-wrap: wrap;
+    align-items: stretch;
 }
 
+/* Aumenta o tamanho das fotos dos clientes */
+#depoimentos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--cor-destaque);
+    box-shadow: var(--sombra-leve);
+}
+
+/* Estilo de cada bloco de depoimento */
 #depoimentos blockquote {
     background-color: var(--cor-card);
-    padding: 32px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: var(--sombra-leve);
-    flex: 1 1 300px; /* Permite que cada card ocupe no mínimo 300px e cresça/encolha */
+    flex: 1 1 280px;
     display: flex;
-    flex-direction: column; /* Conteúdo em coluna para footer ir pro final */
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     font-style: italic;
     color: var(--cor-texto-secundario);
-    border-left: 5px solid var(--cor-destaque); /* Linha dourada à esquerda */
-    margin: 0; /* Remove margem padrão que pode atrapalhar o layout flex */
+    border-left: 5px solid var(--cor-destaque);
+    margin: 0;
     transition: transform 0.3s ease;
 }
 
 #depoimentos blockquote:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 #depoimentos blockquote p {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 15px;
-    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+    flex-grow: 1;
 }
 
 #depoimentos blockquote footer {
-    text-align: right;
+    text-align: center;
     font-style: normal;
     font-weight: bold;
     color: var(--cor-texto-principal);
-    margin-top: auto; /* Empurra o footer para o final do card */
+    margin-top: auto;
 }
 
 /*==================================
   Estilo do Rodapé Compacto
 ==================================*/
 .compact-footer {
-    background-color: var(--cor-texto-principal); /* Fundo marrom escuro */
-    color: var(--cor-card); /* Texto branco */
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-card);
     padding: 20px 20px;
     text-align: center;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between; /* Alinha o conteúdo nas pontas */
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
 
 .footer-content p {
@@ -442,7 +461,7 @@ h2 {
 
 .footer-social-contact {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
 }
 
@@ -457,7 +476,7 @@ h2 {
 }
 
 .footer-social-contact i {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: var(--cor-destaque);
 }
 
@@ -467,32 +486,32 @@ h2 {
 @media (max-width: 900px) {
     .hero-content,
     .sobre-content-cards,
-    #depoimentos .depoimento-container { /* Adicionado depoimentos aqui */
+    #depoimentos .depoimentos-grid {
         flex-direction: column;
-        gap: 30px;
+        gap: 25px;
     }
 
     .hero-text-left,
     .hero-text-right,
     .sobre-card,
     .sobre-valores,
-    #depoimentos blockquote { /* Adicionado depoimentos aqui */
+    #depoimentos blockquote {
         text-align: center;
     }
 
     .sobre-card p,
     .sobre-valores p {
-        font-size: 1em;
+        font-size: 0.95em;
     }
 
     #hero h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
+        gap: 25px;
     }
 
     .footer-section {
@@ -521,24 +540,25 @@ h2 {
     }
 
     header nav {
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     header nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 
-    .projeto-descricao {
+    .projeto-card .overlay {
         opacity: 1;
         position: static;
         background-color: transparent;
         color: var(--cor-texto-secundario);
-        padding: 20px;
+        padding: 15px;
+        transform: translateY(0);
     }
     
-    .projeto-descricao h3,
-    .projeto-descricao p {
+    .projeto-card .overlay h3,
+    .projeto-card .overlay p {
         color: var(--cor-texto-principal);
     }
 }
