@@ -1,0 +1,544 @@
+/*==================================
+  Configurações Globais e Variáveis
+==================================*/
+:root {
+    --cor-fundo-claro: #F8F5F2; /* Bege claro e neutro */
+    --cor-card: #FFFFFF; /* Branco dos cards */
+    --cor-texto-principal: #3E2C1C; /* Marrom escuro elegante */
+    --cor-texto-secundario: #4A4A4A; /* Cinza grafite */
+    --cor-destaque: #C17F3F; /* Dourado amadeirado */
+    --cor-hover: #A6652E; /* Tom de destaque ao passar o mouse */
+    --sombra-leve: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/*==================================
+  Estilos Gerais
+==================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-secundario);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+html {
+    scroll-behavior: smooth; /* Para rolagem suave do menu */
+}
+
+/*==================================
+  Estilo do Cabeçalho e Navegação
+==================================*/
+header {
+    background-color: var(--cor-card);
+    box-shadow: var(--sombra-leve);
+    padding: 10px 0;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+header img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--cor-texto-secundario);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/*==================================
+  Estilo das Seções Principais
+==================================*/
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: var(--cor-texto-principal);
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+/* Seção Hero */
+#hero {
+    padding: 80px 20px;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text-left {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text-right {
+    flex: 1;
+    background-color: var(--cor-card);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-leve);
+    text-align: left;
+}
+
+#hero p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-card);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--cor-hover);
+}
+
+/* Seção Sobre Nós */
+#sobre-nos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#sobre-nos h2 {
+    margin-bottom: 40px;
+}
+
+.sobre-content-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.sobre-card {
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-leve);
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 5px solid var(--cor-destaque);
+    transition: transform 0.3s ease;
+}
+
+.sobre-card:hover {
+    transform: translateY(-5px);
+}
+
+.sobre-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--cor-texto-principal);
+}
+
+.sobre-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+    flex-grow: 1;
+}
+
+.sobre-valores {
+    flex: 1 1 350px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-valores h3 {
+    margin-bottom: 20px;
+    color: var(--cor-texto-principal);
+}
+
+.sobre-valores ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.sobre-valores li {
+    background-color: var(--cor-card);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-leve);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-destaque);
+    flex-grow: 1;
+}
+
+.sobre-valores li:last-child {
+    margin-bottom: 0;
+}
+
+.sobre-valores h4 {
+    color: var(--cor-texto-principal);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.sobre-valores p {
+    font-size: 0.95em;
+}
+
+/* Seção Serviços */
+#servicos {
+    padding: 60px 20px;
+}
+
+#servicos h2 {
+    margin-bottom: 40px;
+}
+
+#servicos ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+#servicos li {
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-leve);
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-left: 5px solid var(--cor-destaque);
+    transition: transform 0.3s ease;
+}
+
+#servicos li:hover {
+    transform: translateY(-5px);
+}
+
+#servicos h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Seção Galeria de Projetos */
+#galeria-projetos {
+    padding: 60px 20px;
+}
+
+#galeria-projetos h2 {
+    margin-bottom: 40px;
+}
+
+#galeria-projetos .galeria {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.projeto-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: var(--sombra-leve);
+    overflow: hidden;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+}
+
+.projeto-imagem,
+.projeto-imagem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.projeto-imagem img {
+    object-fit: cover;
+}
+
+.projeto-descricao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 44, 28, 0.9);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.projeto-descricao h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.projeto-descricao p {
+    color: #fff;
+    font-size: 1em;
+}
+
+.projeto-card:hover .projeto-descricao {
+    opacity: 1;
+}
+
+.projeto-card:hover .projeto-imagem img {
+    transform: scale(1.1);
+}
+
+/* Seção Depoimentos - ESTILIZAÇÃO ATUALIZADA */
+#depoimentos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#depoimentos h2 {
+    margin-bottom: 40px;
+}
+
+/* Novo container para os depoimentos */
+#depoimentos .depoimento-container {
+    display: flex;
+    justify-content: center;
+    gap: 70px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    align-items: stretch; /* Garante que os cards tenham a mesma altura */
+    max-width: 200px; /* Limita a largura do container */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+#depoimentos blockquote {
+    background-color: var(--cor-card);
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-leve);
+    flex: 1 1 300px; /* Permite que cada card ocupe no mínimo 300px e cresça/encolha */
+    display: flex;
+    flex-direction: column; /* Conteúdo em coluna para footer ir pro final */
+    position: relative;
+    font-style: italic;
+    color: var(--cor-texto-secundario);
+    border-left: 5px solid var(--cor-destaque); /* Linha dourada à esquerda */
+    margin: 0; /* Remove margem padrão que pode atrapalhar o layout flex */
+    transition: transform 0.3s ease;
+}
+
+#depoimentos blockquote:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+#depoimentos blockquote p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+#depoimentos blockquote footer {
+    text-align: right;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+    margin-top: auto; /* Empurra o footer para o final do card */
+}
+
+/*==================================
+  Estilo do Rodapé Compacto
+==================================*/
+.compact-footer {
+    background-color: var(--cor-texto-principal); /* Fundo marrom escuro */
+    color: var(--cor-card); /* Texto branco */
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Alinha o conteúdo nas pontas */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0.9em;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-social-contact {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-social-contact a {
+    text-decoration: none;
+    color: var(--cor-card);
+    transition: color 0.3s ease;
+}
+
+.footer-social-contact a:hover {
+    color: var(--cor-destaque);
+}
+
+.footer-social-contact i {
+    font-size: 1.2em;
+    color: var(--cor-destaque);
+}
+
+/*==================================
+  Responsividade
+==================================*/
+@media (max-width: 900px) {
+    .hero-content,
+    .sobre-content-cards,
+    #depoimentos .depoimento-container { /* Adicionado depoimentos aqui */
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-text-left,
+    .hero-text-right,
+    .sobre-card,
+    .sobre-valores,
+    #depoimentos blockquote { /* Adicionado depoimentos aqui */
+        text-align: center;
+    }
+
+    .sobre-card p,
+    .sobre-valores p {
+        font-size: 1em;
+    }
+
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .footer-section.social {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-header {
+        flex-direction: column;
+    }
+
+    header nav {
+        margin-top: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .projeto-descricao {
+        opacity: 1;
+        position: static;
+        background-color: transparent;
+        color: var(--cor-texto-secundario);
+        padding: 20px;
+    }
+    
+    .projeto-descricao h3,
+    .projeto-descricao p {
+        color: var(--cor-texto-principal);
+    }
+}
